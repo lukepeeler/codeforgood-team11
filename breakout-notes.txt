@@ -2,3 +2,32 @@ Goodwill Breakout Notes
 -----------------------
 
 
+Social Media?
+
+-Sure. 
+
+-Extent of social media integration? 
+
+Make connections between different departments and locations.
+(Should we, for the moment, limit this to sharing scores, activities via Facebook, Twitter, etc.?)
+
+-Demographics?
+
+Large number of women. Lots of people in late 20's to late 40's. Keep in mind people with disabilities, both physical and intellectual. 
+(Use high contrast text, keep everything minimal and simple!) This is targeted to Goodwill employees.
+
+-Interconnectivity?
+
+Maybe make more general to share with various nonprofits. (Include a leaderboard!)
+
+(In addition to daily challenge, maintain list of challenges to play peer-to-peer with some other user)
+
+
+-Backend ideas?
+
+Need database of users, database of challenges.
+
+-Admin aspect
+
+Ideally develop webapp to interface with database(s) so admins can add/edit and push challenges and perform analysis.
+(Perhaps leave this for sales pitch and focus on the actual app)
