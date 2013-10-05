@@ -6,6 +6,7 @@ import com.goodwill.getwell.databasemgr.DatabaseManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.content.Context;
@@ -56,5 +57,15 @@ public class WelcomeScreen extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.welcome_screen, menu);
 		return true;
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)
+	{
+	    if ((keyCode == KeyEvent.KEYCODE_BACK))
+	    {
+	        finish();
+	    }
+	    return super.onKeyDown(keyCode, event);
 	}
 }
