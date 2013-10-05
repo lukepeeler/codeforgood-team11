@@ -51,7 +51,7 @@ public final class R {
     }
     public static final class id {
         public static final int acceptButton=0x7f080014;
-        public static final int action_settings=0x7f08001f;
+        public static final int action_settings=0x7f080021;
         public static final int addFriendButton=0x7f080012;
         public static final int careerBtn=0x7f080019;
         public static final int chalCat=0x7f080013;
@@ -65,6 +65,7 @@ public final class R {
         public static final int findFriendsButton=0x7f080001;
         public static final int friendList=0x7f080011;
         public static final int goalWeight=0x7f080009;
+        public static final int greetingText=0x7f08001f;
         public static final int healthBtn=0x7f08001e;
         public static final int healthSpinner=0x7f08000b;
         public static final int home=0x7f080000;
@@ -72,6 +73,7 @@ public final class R {
         public static final int loginBtn=0x7f08000e;
         public static final int moneyBtn=0x7f08001b;
         public static final int passwordText=0x7f08000c;
+        public static final int scoreText=0x7f080020;
         public static final int settings=0x7f08001c;
         public static final int socialBtn=0x7f08001a;
         public static final int socialSpinner=0x7f080010;
