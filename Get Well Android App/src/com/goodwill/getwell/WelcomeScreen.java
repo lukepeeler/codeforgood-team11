@@ -25,7 +25,22 @@ public class WelcomeScreen extends Activity {
 		Intent intent = new Intent(WelcomeScreen.this, HealthScreen.class);
 		WelcomeScreen.this.startActivity(intent);
 	}
-
+	
+	public void careerBtnOnClick(View view){
+		Intent intent = new Intent(WelcomeScreen.this, CareerScreen.class);
+		WelcomeScreen.this.startActivity(intent);
+	}
+	
+	public void socialBtnOnClick(View view){
+		Intent intent = new Intent(WelcomeScreen.this, SocialScreen.class);
+		WelcomeScreen.this.startActivity(intent);
+	}
+	
+	public void moneyBtnOnClick(View view){
+		Intent intent = new Intent(WelcomeScreen.this, FinanceScreen.class);
+		WelcomeScreen.this.startActivity(intent);
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
