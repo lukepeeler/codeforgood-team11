@@ -12,3 +12,4 @@ android-sdk-macosx/
 *.swp
 *.out
 .metadata/
+bin/
