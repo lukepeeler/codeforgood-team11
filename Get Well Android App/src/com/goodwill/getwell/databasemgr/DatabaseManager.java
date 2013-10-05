@@ -35,11 +35,39 @@ public class DatabaseManager {
 		} finally {
 			st.dispose();
 		}
+		db.dispose();
 	}
 
 	public User fetchUserByUsername(String username) {
-		return null;
+		SQLiteStatement st = null;
+		User user = null;
+		try {
+			db.open();
+			st = db.prepare("SELECT * FROM users WHERE username = '" + username +"'");
+			while (st.step()) {
+				user = new User(st.columnString(0),
+								st.columnString(1),
+								st.columnString(2),
+								st.columnString(3),
+								st.columnString(4),
+								st.columnInt(5),
+								st.columnInt(6),
+								st.columnInt(7),
+								st.columnInt(8),
+								st.columnString(9).toCharArray()[0],
+								st.columnInt(10));
+			}
+		} catch (SQLiteException e) {
+			e.printStackTrace();
+		} finally {
+			st.dispose();
+		}
+		
+		db.dispose();
+		return user;
+		
 	}
+		
 
 
 
