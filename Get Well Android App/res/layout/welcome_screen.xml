@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,8 +9,78 @@
     tools:context=".WelcomeScreen" >
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/greetingView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Hello "/>
+    
+    <Button
+        android:id="@+id/socialBtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBaseline="@+id/healthBtn"
+        android:layout_alignBottom="@+id/healthBtn"
+        android:layout_alignLeft="@+id/careerBtn" />
+
+    <Button
+        android:id="@+id/careerBtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/socialBtn"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/currGlobalBtn" />
+
+    <Button
+        android:id="@+id/currGlobalBtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/careerBtn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/moneyBtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBaseline="@+id/careerBtn"
+        android:layout_alignBottom="@+id/careerBtn"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/currGlobalBtn" />
+
+    <Button
+        android:id="@+id/notificationsBtn"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/streakBtn"
+        android:layout_alignRight="@+id/careerBtn" />
+
+    <Button
+        android:id="@+id/badgesBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/notificationsBtn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/streakBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/currGlobalBtn"
+        android:layout_alignLeft="@+id/moneyBtn"
+        android:layout_marginBottom="24dp" />
+
+    <Button
+        android:id="@+id/healthBtn"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignLeft="@+id/moneyBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp" />
+
+    
 
 </RelativeLayout>
