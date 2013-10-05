@@ -170,6 +170,11 @@ public class User {
 		DatabaseManager.addChallengeToUser(username, c);
 	}
 	
+	public void addDailyChallenge()
+	{
+		DatabaseManager.addChallengeToUser(username, DatabaseManager.fetchDailyChallenge());
+	}
+	
 
 	
 	
