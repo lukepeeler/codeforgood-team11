@@ -162,7 +162,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		User user = null;
 		try {
 			System.out.println("here0");
-			System.out.println(checkDataBase());
+			System.out.println("Database check: " + checkDataBase());
 			
 			openDataBase();
 			System.out.println("here1");
