@@ -9,5 +9,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SocialScreen" >
     
+    <Spinner
+        android:id="@+id/socialSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
+
+    <ListView
+        android:id="@+id/friendList"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/socialSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp" >
+    </ListView>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/socialSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="16dp"
+        android:text="Friend Leaderboard"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#1E90FF" />
+
+    <Button
+        android:id="@+id/addFriendButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/friendList"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:drawableRight="@drawable/plus"
+        android:text="Add Friend" />
 
 </RelativeLayout>
