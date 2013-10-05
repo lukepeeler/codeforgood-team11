@@ -17,50 +17,40 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_alignRight="@+id/textView4"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="36dp"
-        android:gravity="center"
-        android:text="Find as much change as you can around your house and put it in a jar."
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/chalCat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="FINANCIAL WELLNESS"
+        android:textAllCaps="true"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#228B22"
         android:textStyle="italic"
          />
 
-    <TextView
-        android:id="@+id/textView4"
+    <Button
+        android:id="@+id/acceptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/acceptButton"
-        android:layout_alignRight="@+id/declineButton"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="31dp"
-        android:gravity="center"
-        android:textStyle="italic"
-        android:text="PRO TIP - On Average, setting aside small change daily can add up to $50 a month!"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="66dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/button_accept"
+        android:drawableLeft="@drawable/accept_icon"
+        android:text="ACCEPT"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/declineButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
+        android:layout_alignBaseline="@+id/acceptButton"
+        android:layout_alignBottom="@+id/acceptButton"
         android:layout_marginLeft="14dp"
-        android:layout_marginTop="46dp"
         android:layout_toRightOf="@+id/acceptButton"
         android:background="@drawable/button_decline"
         android:drawableLeft="@drawable/decline_icon"
@@ -68,18 +58,29 @@
         android:textColor="#ffffff"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/acceptButton"
+    <TextView
+        android:id="@+id/chalTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/declineButton"
-        android:layout_alignBottom="@+id/declineButton"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="17dp"
-        android:background="@drawable/button_accept"
-        android:drawableLeft="@drawable/accept_icon"
-        android:text="ACCEPT"
-        android:textColor="#000000"
-        android:textStyle="bold" />
+        android:layout_above="@+id/acceptButton"
+        android:layout_alignLeft="@+id/chalDesc"
+        android:layout_alignRight="@+id/chalDesc"
+        android:layout_marginBottom="48dp"
+        android:gravity="center"
+        android:text="PRO-TIP:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/chalDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/acceptButton"
+        android:layout_alignRight="@+id/declineButton"
+        android:layout_below="@+id/chalCat"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="Find"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

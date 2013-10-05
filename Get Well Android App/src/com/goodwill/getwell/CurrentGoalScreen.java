@@ -1,5 +1,8 @@
 package com.goodwill.getwell;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -7,11 +10,15 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
  
 public class CurrentGoalScreen extends Activity {
  
-	Button todaysChallengeButton, findFriendsButton;
+	ImageButton todaysChallengeButton; 
+	Button findFriendsButton;
+	TextView time;
 	
 	//Boolean to decide if Challenge was Accepted
 	boolean challengeAccepted = false;
@@ -24,7 +31,7 @@ public class CurrentGoalScreen extends Activity {
 	}
 	
 	private void setUpVars(){
-		todaysChallengeButton = (Button) findViewById(R.id.todaysChallengeButton);
+		todaysChallengeButton = (ImageButton) findViewById(R.id.todaysChallengeButton);
 		findFriendsButton = (Button) findViewById(R.id.findFriendsButton);
 		
 		//If $ Button pressed, go to description
@@ -35,6 +42,21 @@ public class CurrentGoalScreen extends Activity {
 				
 			}
 		});
+		
+		findFriendsButton.setOnClickListener(new View.OnClickListener(){
+			public void onClick(View v){
+				//Show Multiple Choice Dialog Box
+
+				
+			}
+		});
+		
+		
+		int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+		int timeLeft = 24-hour;
+		
+		
+		
 		
 		
 	}
