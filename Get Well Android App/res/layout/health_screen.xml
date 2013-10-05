@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android1:background="@drawable/Health"
     tools:context=".HealthScreen" >
 
      <TextView
@@ -44,5 +45,13 @@
         android1:layout_alignLeft="@+id/currBMI"
         android1:layout_below="@+id/currBMI"
         android1:layout_marginTop="18dp" />
+
+    <Button
+        android1:id="@+id/home"
+        android1:layout_width="50dp"
+        android1:layout_height="50dp"
+        android1:layout_alignParentBottom="true"
+        android1:layout_alignParentRight="true"
+        android1:background="@drawable/homeicon" />
 
 </RelativeLayout>
