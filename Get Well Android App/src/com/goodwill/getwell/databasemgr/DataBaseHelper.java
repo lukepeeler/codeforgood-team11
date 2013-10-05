@@ -185,6 +185,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 //								st.columnInt(10));
 //			}
 		} catch (SQLException e) {
+			System.out.println("SQL exception");
 			e.printStackTrace();
 		} finally {
 //			st.dispose();
