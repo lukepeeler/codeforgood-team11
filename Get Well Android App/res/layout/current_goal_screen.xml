@@ -69,25 +69,6 @@
         android:text="Time Left:"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/time"
-        android:layout_alignRight="@+id/textView1"
-        android:text="Hours"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignRight="@+id/todaysChallengeButton"
-        android:text="T"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <Button
         android1:id="@+id/home"
         android1:layout_width="50dp"
@@ -96,5 +77,25 @@
         android1:layout_alignParentRight="true"
         android1:background="@drawable/yellowhomeicon" 
         android1:onClick="welcomeOnClick"/>
+
+    <TextView
+        android1:id="@+id/time"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignBaseline="@+id/textView3"
+        android1:layout_alignBottom="@+id/textView3"
+        android1:layout_alignLeft="@+id/textView1"
+        android1:text="T"
+        android1:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android1:id="@+id/textView4"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignBottom="@+id/time"
+        android1:layout_marginRight="16dp"
+        android1:layout_toLeftOf="@+id/home"
+        android1:text="Hours"
+        android1:textAppearance="?android:attr/textAppearanceMedium" />
     
 </RelativeLayout>

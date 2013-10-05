@@ -1,4 +1,5 @@
 package com.goodwill.getwell;
+import com.goodwill.getwell.databasemgr.DataBaseHelper;
 import com.goodwill.getwell.databasemgr.DatabaseManager;
 
 import android.app.Activity;
@@ -8,20 +9,24 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.content.Context;
 
 public class TodaysChallenge extends Activity {
 	TextView chalCat, chalDesc, chalTip;
 	Button acceptButton, declineButton;
+	DataBaseHelper helper;
+	private Context context;
 	Challenge c;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		helper = new DataBaseHelper(context);
 		setContentView(R.layout.todays_challenge);
 		setUpVars();
 	}
 	
 	private void setUpVars(){
-		c = DatabaseManager.fetchDailyChallenge();
+		c = helper.fetchDailyChallenge();
 		acceptButton = (Button) findViewById(R.id.acceptButton);
 		declineButton = (Button) findViewById(R.id.declineButton);
 		
