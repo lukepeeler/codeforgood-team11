@@ -8,6 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android1:background="@drawable/goalsbackground"
     tools:context=".CurrentGoalScreen" >
     
     <Button
@@ -52,7 +53,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="118dp"
         android:fontFamily="Calibri"
-        android:text="TODAY&apos;S CHALLENGE"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#1E90FF"
         android:textStyle="bold" />
@@ -88,4 +88,13 @@
         android:text="T"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <Button
+        android1:id="@+id/home"
+        android1:layout_width="50dp"
+        android1:layout_height="50dp"
+        android1:layout_alignParentBottom="true"
+        android1:layout_alignParentRight="true"
+        android1:background="@drawable/yellowhomeicon" 
+        android1:onClick="welcomeOnClick"/>
+    
 </RelativeLayout>

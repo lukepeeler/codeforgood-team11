@@ -17,7 +17,7 @@ import com.almworks.sqlite4java.SQLiteStatement;
 import com.goodwill.getwell.*;
 
 public class DatabaseManager {
-	private static SQLiteConnection db = new SQLiteConnection(new File("/Users/lukepeeler/dev/appdb.db"));
+	private static SQLiteConnection db = new SQLiteConnection(new File("/data/data/com.goodwill.getwell/databases/appdb.db"));
 
 	public DatabaseManager() {
 		// TODO: edit path of this database when demoing!!
@@ -27,7 +27,7 @@ public class DatabaseManager {
 		SQLiteStatement st = null;
 		try {
 			db.open();
-			st = db.prepare("INSERT INTO users (username, password, email, fname, lname, age, height_ft, height_in, weight, gender, employee_id) values ('" + user.getUsername() + "', "
+			st = db.prepare("INSERT INTO users (_id, password, email, fname, lname, age, height_ft, height_in, weight, gender, employee_id) values ('" + user.getUsername() + "', "
 					+ "'" + user.getPassword() + "', '" + user.getEmail() + "', '"
 					+ user.getFname() + "', '" + user.getLname() + "', "
 					+ user.getAge() + ", " + user.getHeightFeet() + ", "
@@ -49,7 +49,7 @@ public class DatabaseManager {
 		User user = null;
 		try {
 			db.open();
-			st = db.prepare("SELECT * FROM users WHERE username = '" + username +"'");
+			st = db.prepare("SELECT * FROM users WHERE _id = '" + username +"'");
 			while (st.step()) {
 				user = new User(st.columnString(0),
 								st.columnString(1),
@@ -81,7 +81,7 @@ public class DatabaseManager {
 		ArrayList<Challenge> challenges = new ArrayList<Challenge>();
 		try {
 			db.open();
-			st = db.prepare("SELECT * FROM challenge NATURAL JOIN participation WHERE username = '" + username +"';");
+			st = db.prepare("SELECT * FROM challenge, participation WHERE username = '" + username +"' AND challenge._id = participation.challenge_id;");
 			while (st.step()) {
 				try {
 					created = new SimpleDateFormat("yyyy-MM-dd").parse(st.columnString(4));
@@ -115,7 +115,7 @@ public class DatabaseManager {
 		ArrayList<String> friendNames = new ArrayList<String>();
 		try {
 			db.open();
-			st = db.prepare("SELECT friend_name FROM users NATURAL JOIN friendship WHERE username = '" + username +"';");
+			st = db.prepare("SELECT friend_name_id FROM friendship WHERE username_id = '" + username + "';");
 			while (st.step()) {
 				friendNames.add(st.columnString(0));
 			}
@@ -170,7 +170,6 @@ public class DatabaseManager {
 		Date today = new Date();
 		Challenge c = null;
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		System.out.println(dateFormat.format(today));
 		Date created = null, due = null;
 		SQLiteStatement st = null;
 		try{

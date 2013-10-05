@@ -25,4 +25,10 @@ public class FinanceScreen extends Activity {
 	    }
 	    return super.onKeyDown(keyCode, event);
 	}
+	
+	public void welcomeOnClick(View view){
+		Intent intent = new Intent(FinanceScreen.this, WelcomeScreen.class);
+		FinanceScreen.this.startActivity(intent);
+				
+	}
 }

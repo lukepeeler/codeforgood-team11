@@ -127,4 +127,10 @@ public class SocialScreen extends Activity {
 	    return super.onKeyDown(keyCode, event);
 	}
 	
+	public void welcomeOnClick(View view){
+		Intent intent = new Intent(SocialScreen.this, WelcomeScreen.class);
+		SocialScreen.this.startActivity(intent);
+				
+	}
+	
 }

@@ -58,5 +58,11 @@ public class HealthScreen extends Activity{
 	    return super.onKeyDown(keyCode, event);
 	}
 	
+	public void welcomeOnClick(View view){
+		Intent intent = new Intent(HealthScreen.this, WelcomeScreen.class);
+		HealthScreen.this.startActivity(intent);
+				
+	}
+	
 	
 }

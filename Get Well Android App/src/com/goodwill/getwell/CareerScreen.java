@@ -25,4 +25,10 @@ public class CareerScreen extends Activity {
 	    }
 	    return super.onKeyDown(keyCode, event);
 	}
+	
+	public void welcomeOnClick(View view){
+		Intent intent = new Intent(CareerScreen.this, WelcomeScreen.class);
+		CareerScreen.this.startActivity(intent);
+				
+	}
 }
