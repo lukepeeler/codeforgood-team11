@@ -2,93 +2,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@drawable/Background"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".WelcomeScreen" >
 
-    <TextView
-        android:id="@+id/greetingView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:text="Hello "/>
-    
-    <Button
-        android:id="@+id/socialBtn"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_alignBaseline="@+id/healthBtn"
-        android:layout_alignBottom="@+id/healthBtn"
-        android:layout_alignLeft="@+id/careerBtn"
-        android:onClick="socialBtnOnClick" />
-
-    <Button
-        android:id="@+id/careerBtn"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_above="@+id/socialBtn"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="15dp"
-        android:layout_toRightOf="@+id/currGlobalBtn" 
-        android:onClick="careerBtnOnClick"/>
-
     <Button
         android:id="@+id/currGlobalBtn"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_above="@+id/careerBtn"
-        android:layout_centerHorizontal="true" 
-        android:onClick="currGlobalBtnOnClick"/>
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignBaseline="@+id/careerBtn"
+        android:layout_alignBottom="@+id/careerBtn"
+        android:layout_alignLeft="@+id/socialBtn"
+        android:background="@drawable/goalicon"
+        android:onClick="currGlobalBtnOnClick" />
 
     <Button
         android:id="@+id/moneyBtn"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_alignBaseline="@+id/careerBtn"
-        android:layout_alignBottom="@+id/careerBtn"
-        android:layout_marginRight="15dp"
-        android:layout_toLeftOf="@+id/currGlobalBtn" 
-        android:onClick="moneyBtnOnClick"/>
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignBaseline="@+id/socialBtn"
+        android:layout_alignBottom="@+id/socialBtn"
+        android:layout_marginLeft="32dp"
+        android:layout_toRightOf="@+id/socialBtn"
+        android:background="@drawable/financeicon"
+        android:onClick="moneyBtnOnClick" />
 
     <Button
-        android:id="@+id/notificationsBtn"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/streakBtn"
-        android:layout_alignRight="@+id/careerBtn" 
-        android:onClick="notificationsBtnOnClick"/>
-
-    <Button
-        android:id="@+id/badgesBtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/notificationsBtn"
-        android:layout_centerHorizontal="true" 
-        android:onClick="badgesBtnOnClick"/>
-
-    <Button
-        android:id="@+id/streakBtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_above="@+id/currGlobalBtn"
+        android:id="@+id/settings"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignBaseline="@+id/currGlobalBtn"
+        android:layout_alignBottom="@+id/currGlobalBtn"
         android:layout_alignLeft="@+id/moneyBtn"
-        android:layout_marginBottom="24dp" 
-        android:onClick="streakBtnOnClick"/>
+        android:background="@drawable/settingsicon" />
+
+    <Button
+        android:id="@+id/careerBtn"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_above="@+id/healthBtn"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="29dp"
+        android:layout_toLeftOf="@+id/currGlobalBtn"
+        android:background="@drawable/careericon"
+        android:onClick="careerBtnOnClick" />
+
+    <Button
+        android:id="@+id/info"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/moneyBtn"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="14dp"
+        android:background="@drawable/infoicon" />
+
+    <Button
+        android:id="@+id/socialBtn"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_above="@+id/info"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="194dp"
+        android:background="@drawable/socialicon"
+        android:onClick="socialBtnOnClick" />
 
     <Button
         android:id="@+id/healthBtn"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_alignLeft="@+id/moneyBtn"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp" 
-        android:onClick="healthBtnOnClick"/>
-
-    
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignBaseline="@+id/socialBtn"
+        android:layout_alignBottom="@+id/socialBtn"
+        android:layout_alignLeft="@+id/careerBtn"
+        android:background="@drawable/healthicon"
+        android:onClick="healthBtnOnClick" />
 
 </RelativeLayout>
