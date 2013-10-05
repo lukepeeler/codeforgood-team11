@@ -4,8 +4,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import com.almworks.sqlite4java.SQLiteStatement;
+import com.goodwill.getwell.Challenge;
 import com.goodwill.getwell.User;
 
 import android.content.Context;
@@ -124,12 +128,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
  
     public void openDataBase() throws SQLException{
  
-    	System.out.println("foobar");
     	//Open the database
         String myPath = DB_PATH + DB_NAME;
-        
     	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-    	System.out.println("foobar1");
     	
  
     }
@@ -158,45 +159,62 @@ public class DataBaseHelper extends SQLiteOpenHelper{
        // You could return cursors by doing "return myDataBase.query(....)" so it'd be easy
        // to you to create adapters for your views.
 	
-	public User fetchUserByUsername(String username) {
+	public User fetchUserByUsername(String username) 
+	{
 		User user = null;
 		try {
-			System.out.println("here0");
-			System.out.println("Database check: " + checkDataBase());
-			
 			openDataBase();
-			System.out.println("here1");
-			Cursor cursor = myDataBase.rawQuery("SELECT * FROM users WHERE _id = '" + username + "'", null);
-			System.out.println("here2");
-			if (cursor != null){
-				while (cursor.moveToNext()){
-					System.out.println(cursor.getString(0));
+			Cursor cursor = myDataBase.rawQuery(
+					"SELECT * FROM users WHERE _id = '" + username + "'", null);
+			if (cursor != null) {
+				while (cursor.moveToNext()) {
+					user = new User(cursor.getString(0), cursor.getString(1),
+							cursor.getString(2), cursor.getString(3),
+							cursor.getString(4), cursor.getInt(5),
+							cursor.getInt(6), cursor.getInt(7),
+							cursor.getInt(8),
+							cursor.getString(9).toCharArray()[0],
+							cursor.getInt(10));
 				}
-				
+
 			}
-//			while (st.step()) {
-//				user = new User(st.columnString(0),
-//								st.columnString(1),
-//								st.columnString(2),
-//								st.columnString(3),
-//								st.columnString(4),
-//								st.columnInt(5),
-//								st.columnInt(6),
-//								st.columnInt(7),
-//								st.columnInt(8),
-//								st.columnString(9).toCharArray()[0],
-//								st.columnInt(10));
-//			}
+
 		} catch (SQLException e) {
-			System.out.println("SQL exception");
 			e.printStackTrace();
-		} finally {
-//			st.dispose();
+		}
+
+		return user;
+
+	}
+	
+	public Challenge fetchDailyChallenge()
+	{
+		Date today = new Date();
+		Challenge c = null;
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		Date created = null, due = null;
+		try{
+			openDataBase();
+			Cursor cursor = myDataBase.rawQuery("SELECT * FROM challenge WHERE date_created = '" + dateFormat.format(today) + "'", null);
+			if (cursor != null) {
+				while (cursor.moveToNext()) {
+					try {
+						created = new SimpleDateFormat("yyyy-MM-dd").parse(cursor.getString(4));
+						due = new SimpleDateFormat("yyyy-MM-dd").parse(cursor.getString(5));
+					} catch (java.text.ParseException e) {
+						e.printStackTrace();
+					}
+					c = new Challenge(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
+							  cursor.getInt(3), created, due, cursor.getInt(6), cursor.getString(7));
+				}
+
+			}
+			
+		} catch (SQLiteException e){
+			e.printStackTrace();
 		}
 		
-		//db.dispose();
-		return user;
-		
+		return c;
 	}
  
 }
