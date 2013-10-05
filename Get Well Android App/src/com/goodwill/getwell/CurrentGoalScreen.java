@@ -49,6 +49,23 @@ public class CurrentGoalScreen extends Activity {
 		findFriendsButton = (Button) findViewById(R.id.findFriendsButton);
 		challengeDesc = (TextView) findViewById(R.id.textView1);
 		challengeDesc.setText(c.getChallengeName());
+		
+		//Populate Icon with challenge Type
+		String cat = c.getType();
+		if(cat.equals("Health")){
+			todaysChallengeButton.setBackgroundResource(R.drawable.healthicon);
+		}
+		else if(cat.equals("Career")){
+			todaysChallengeButton.setBackgroundResource(R.drawable.careericon);
+		}
+		else if(cat.equals("Financial")){
+			todaysChallengeButton.setBackgroundResource(R.drawable.financeicon);
+		}
+		else{
+			todaysChallengeButton.setBackgroundResource(R.drawable.socialicon);
+		}
+		
+		
 		//If $ Button pressed, go to description
 		todaysChallengeButton.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){
