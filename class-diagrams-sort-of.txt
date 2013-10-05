@@ -1,0 +1,68 @@
+Users Class:
+	Methods: 
+		Create User
+		Update Info (For Weight?)
+		Update Points
+		Maintain Streak
+	Personal Data (private):
+		User Name
+		Avatar
+		Height
+		Weight
+		Age
+		Sex
+		Email?
+		Employee ID?
+	Points Data (public):
+		Daily
+		Weekly
+			Keep points in memory for the week
+		Total Points
+		Streak
+	Friends List Data: 
+		Rank compare methods
+		
+
+Global Challenge Class
+	Methods: 
+		Get Global Challenge
+		Update Challenge
+		Finish Challenge
+	Data: 
+		# of Points 
+		Combo Possibilities
+			Multiple Users
+			Streaks
+		Time Left
+		Description 
+		
+		
+Other Challenge Classes
+	Methods: 
+		Start a new Challenge
+		Update Challenge
+		Finish Challenge
+	Data: 
+		Same as current challenge
+		
+Friends Class
+	Methods: 
+		Add Friends
+		Send Message
+		Schedule Events
+		Give Props
+		Encourage
+	Data: 
+		Friends List
+
+Badges Class (3 types - Points, Challenges, Social)
+	Methods:
+		Unlock Badge
+		Show Badge Progress
+		Update Badge Progress
+	Data: 
+		Badge metric
+		Progress Bar
+		
+	
+	

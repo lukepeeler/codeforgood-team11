@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top" >
+
+    <Button
+        android:id="@+id/findFriendsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/todaysChallengeButton"
+        android:layout_marginTop="66dp"
+        android:background="@drawable/friends_button"
+        android:drawableLeft="@drawable/friends"
+        android:onClick="findFriend"
+        android:text="INVITE FRIENDS!"
+        android:textColor="#1E90FF"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/todaysChallengeButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="Click button to learn more"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageButton
+        android:id="@+id/todaysChallengeButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="166dp"
+        android:background="@drawable/financial"
+        android:onClick="openDescription" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
+        android:fontFamily="Calibri"
+        android:text="TODAY&apos;S CHALLENGE"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#1E90FF"
+        android:textStyle="bold" />
+
+</RelativeLayout>
