@@ -46,6 +46,10 @@
             android:name="com.goodwill.getwell.SocialScreen"
             android:label="Social" >
         </activity>
+        <activity
+            android:name="com.goodwill.getwell.CreateScreen"
+            android:label="Create" >
+        </activity>
     </application>
 
 </manifest>
