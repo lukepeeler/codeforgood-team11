@@ -175,7 +175,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 							cursor.getInt(6), cursor.getInt(7),
 							cursor.getInt(8),
 							cursor.getString(9).toCharArray()[0],
-							cursor.getInt(10));
+							cursor.getInt(10),
+							cursor.getInt(11));
 				}
 
 			}

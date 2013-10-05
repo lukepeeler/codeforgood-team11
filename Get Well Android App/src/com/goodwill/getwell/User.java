@@ -16,6 +16,7 @@ public class User {
 	private int heightFeet;
 	private int heightInches;
 	private int weight;
+	private int goalWeight;
 	private char gender;
 	private int employeeID;
 	private ArrayList<User> friends;
@@ -27,7 +28,7 @@ public class User {
 	
 	// "signup" constructor
 	public User(String username, String password, String email, String fname, String lname,
-				int age, int heightFeet, int heightInches, int weight, char gender, int employeeID)
+				int age, int heightFeet, int heightInches, int weight, char gender, int employeeID, int goalWeight)
 	{
 		this.username = username;
 		this.password = password;
@@ -40,6 +41,7 @@ public class User {
 		this.weight = weight;
 		this.gender = gender;
 		this.employeeID = employeeID;
+		this.goalWeight = goalWeight;
 		
 		// push data to database
 	}
@@ -64,6 +66,11 @@ public class User {
 	{
 		User user = helper.fetchUserByUsername(username);
 		return user;
+	}
+	
+	public int getGoalWeight()
+	{
+		return goalWeight;
 	}
 
 	public String getUsername() {
