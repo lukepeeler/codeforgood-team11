@@ -37,17 +37,18 @@ public class LoginScreen extends Activity {
 		
 	}
 	public void loginBtnOnClick(View view){
-		switch(User.login(usernameText.getText().toString(), passwordText.getText().toString()) )
+		System.out.println("TEST " + User.login(usernameText.getText().toString(), passwordText.getText().toString()));
+		switch(User.login(usernameText.getText().toString(), passwordText.getText().toString()))
 		{	
 			case 0:
 				user = helper.fetchUserByUsername(usernameText.getText().toString());
 				Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
 				LoginScreen.this.startActivity(intent);
 				break;
-//			case -1: Toast.makeText(getApplicationContext(), "User not found", Toast.LENGTH_SHORT).show();
-//				break;
-//			case -2: Toast.makeText(getApplicationContext(), "Password incorrect", Toast.LENGTH_SHORT).show();
-//				break;
+			case -1: Toast.makeText(getApplicationContext(), "User not found", Toast.LENGTH_SHORT).show();
+				break;
+			case -2: Toast.makeText(getApplicationContext(), "Password incorrect", Toast.LENGTH_SHORT).show();
+				break;
 		}
 	}
 	

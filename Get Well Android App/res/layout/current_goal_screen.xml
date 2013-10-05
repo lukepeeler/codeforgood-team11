@@ -84,7 +84,7 @@
         android1:layout_height="wrap_content"
         android1:layout_alignBaseline="@+id/textView3"
         android1:layout_alignBottom="@+id/textView3"
-        android1:layout_alignLeft="@+id/textView1"
+        android1:layout_alignRight="@+id/todaysChallengeButton"
         android1:text="T"
         android1:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -92,9 +92,9 @@
         android1:id="@+id/textView4"
         android1:layout_width="wrap_content"
         android1:layout_height="wrap_content"
+        android1:layout_alignBaseline="@+id/time"
         android1:layout_alignBottom="@+id/time"
-        android1:layout_marginRight="16dp"
-        android1:layout_toLeftOf="@+id/home"
+        android1:layout_alignRight="@+id/findFriendsButton"
         android1:text="Hours"
         android1:textAppearance="?android:attr/textAppearanceMedium" />
     
