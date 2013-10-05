@@ -45,5 +45,11 @@ public class HealthScreen extends Activity{
 	        }});
 		}
 	
+	public void welcomeOnClick(View view){
+		Intent intent = new Intent(HealthScreen.this, WelcomeScreen.class);
+		HealthScreen.this.startActivity(intent);
+				
+	}
+	
 	
 }

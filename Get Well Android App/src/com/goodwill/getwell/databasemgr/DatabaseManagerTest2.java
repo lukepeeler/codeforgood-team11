@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import junit.framework.TestCase;
 
+import android.content.Context;
+
 import com.goodwill.getwell.*;
 
 public class DatabaseManagerTest2 extends TestCase {
@@ -23,32 +25,8 @@ public class DatabaseManagerTest2 extends TestCase {
 	}
 	
 	public void testFetchUser(){
-		DatabaseManager dbm = new DatabaseManager();
-		dbm.fetchUserByUsername("foo2");
+		DataBaseHelper helper = new DataBaseHelper(null);
+		helper.fetchUserByUsername("foo");
 	}
 	
-	public void testGetChallenges(){
-		DatabaseManager dbm = new DatabaseManager();
-		ArrayList<Challenge> fooChallenges = dbm.getUserChallenges("foo");
-		for (Challenge c : fooChallenges){
-			System.out.println(c.getChallengeID() + "\t" + c.getChallengeName() + "\t" + c.getChallengeDesc() + "\t" + c.getChallengePoints() + "\t" + c.getDateCreated() + "\t" + c.getDateDue() + "\t" + c.isComplete());
-		}
-	}
-	
-	public void testGetFriends(){
-		DatabaseManager dbm = new DatabaseManager();
-		ArrayList<User> friends = dbm.getUserFriends("foo");
-		for (User friend : friends){
-			System.out.println(friend.getUsername());
-		}
-		
-		//dbm.addFriendToUser(dbm.fetchUserByUsername("foo"), "foo4");
-		
-		friends = dbm.getUserFriends("foo");
-		for (User friend : friends){
-			System.out.println(friend.getUsername());
-		}
-		
-		DatabaseManager.fetchDailyChallenge();
- 	}
 }

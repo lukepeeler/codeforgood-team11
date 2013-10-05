@@ -170,7 +170,6 @@ public class DatabaseManager {
 		Date today = new Date();
 		Challenge c = null;
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		System.out.println(dateFormat.format(today));
 		Date created = null, due = null;
 		SQLiteStatement st = null;
 		try{
