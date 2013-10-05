@@ -65,10 +65,10 @@ public final class R {
         public static final int findFriendsButton=0x7f080001;
         public static final int friendList=0x7f080011;
         public static final int goalWeight=0x7f080009;
-        public static final int healthBtn=0x7f08001d;
+        public static final int healthBtn=0x7f08001e;
         public static final int healthSpinner=0x7f08000b;
         public static final int home=0x7f080000;
-        public static final int info=0x7f08001e;
+        public static final int info=0x7f08001d;
         public static final int loginBtn=0x7f08000e;
         public static final int moneyBtn=0x7f08001b;
         public static final int passwordText=0x7f08000c;
@@ -78,20 +78,21 @@ public final class R {
         public static final int textView1=0x7f080004;
         public static final int textView2=0x7f080002;
         public static final int textView3=0x7f080005;
-        public static final int textView4=0x7f080006;
-        public static final int time=0x7f080007;
+        public static final int textView4=0x7f080007;
+        public static final int time=0x7f080006;
         public static final int todaysChallengeButton=0x7f080003;
         public static final int usernameText=0x7f08000f;
     }
     public static final class layout {
         public static final int career_screen=0x7f030000;
-        public static final int current_goal_screen=0x7f030001;
-        public static final int finance_screen=0x7f030002;
-        public static final int health_screen=0x7f030003;
-        public static final int login_screen=0x7f030004;
-        public static final int social_screen=0x7f030005;
-        public static final int todays_challenge=0x7f030006;
-        public static final int welcome_screen=0x7f030007;
+        public static final int create_screen=0x7f030001;
+        public static final int current_goal_screen=0x7f030002;
+        public static final int finance_screen=0x7f030003;
+        public static final int health_screen=0x7f030004;
+        public static final int login_screen=0x7f030005;
+        public static final int social_screen=0x7f030006;
+        public static final int todays_challenge=0x7f030007;
+        public static final int welcome_screen=0x7f030008;
     }
     public static final class menu {
         public static final int current_goal_screen=0x7f070000;
