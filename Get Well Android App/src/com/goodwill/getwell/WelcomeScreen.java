@@ -32,6 +32,7 @@ public class WelcomeScreen extends Activity {
 			public void onClick(View v){
 				Intent intent = new Intent(WelcomeScreen.this, CurrentGoalScreen.class);
 				WelcomeScreen.this.startActivity(intent);
+				
 			}
 		});
 	}
