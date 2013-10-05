@@ -18,7 +18,7 @@ public class WelcomeScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_screen);
 		c = DatabaseManager.fetchDailyChallenge();
-		user = DatabaseManager.fetchUserByUsername("foo");
+		user = LoginScreen.user;
 	}
 	
 	public void currGlobalBtnOnClick(View view){
