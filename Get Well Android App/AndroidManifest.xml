@@ -26,6 +26,10 @@
             android:name="com.goodwill.getwell.CurrentGoalScreen"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.goodwill.getwell.HealthScreen"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
