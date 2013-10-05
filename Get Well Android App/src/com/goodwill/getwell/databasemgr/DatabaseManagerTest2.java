@@ -42,7 +42,7 @@ public class DatabaseManagerTest2 extends TestCase {
 			System.out.println(friend.getUsername());
 		}
 		
-		dbm.addFriendToUser(dbm.fetchUserByUsername("foo"), "foo4");
+		//dbm.addFriendToUser(dbm.fetchUserByUsername("foo"), "foo4");
 		
 		friends = dbm.getUserFriends("foo");
 		for (User friend : friends){
