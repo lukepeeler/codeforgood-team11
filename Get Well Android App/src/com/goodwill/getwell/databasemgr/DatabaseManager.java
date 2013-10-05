@@ -51,17 +51,17 @@ public class DatabaseManager {
 			db.open();
 			st = db.prepare("SELECT * FROM users WHERE _id = '" + username +"'");
 			while (st.step()) {
-				user = new User(st.columnString(0),
-								st.columnString(1),
-								st.columnString(2),
-								st.columnString(3),
-								st.columnString(4),
-								st.columnInt(5),
-								st.columnInt(6),
-								st.columnInt(7),
-								st.columnInt(8),
-								st.columnString(9).toCharArray()[0],
-								st.columnInt(10));
+//				user = new User(st.columnString(0),
+//								st.columnString(1),
+//								st.columnString(2),
+//								st.columnString(3),
+//								st.columnString(4),
+//								st.columnInt(5),
+//								st.columnInt(6),
+//								st.columnInt(7),
+//								st.columnInt(8),
+//								st.columnString(9).toCharArray()[0],
+//								st.columnInt(10));
 			}
 		} catch (SQLiteException e) {
 			e.printStackTrace();

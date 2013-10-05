@@ -3,7 +3,6 @@ package com.goodwill.getwell;
 import org.apache.http.auth.UsernamePasswordCredentials;
 
 import com.goodwill.getwell.databasemgr.DataBaseHelper;
-import com.goodwill.getwell.databasemgr.DatabaseManager;
 
 import android.os.Bundle;
 import android.app.Activity;

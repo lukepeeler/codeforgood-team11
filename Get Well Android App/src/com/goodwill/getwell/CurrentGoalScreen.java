@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 import com.goodwill.getwell.databasemgr.DataBaseHelper;
-import com.goodwill.getwell.databasemgr.DatabaseManager;
 
 import android.os.Bundle;
 import android.app.Activity;

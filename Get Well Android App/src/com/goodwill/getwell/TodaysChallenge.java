@@ -1,6 +1,5 @@
 package com.goodwill.getwell;
 import com.goodwill.getwell.databasemgr.DataBaseHelper;
-import com.goodwill.getwell.databasemgr.DatabaseManager;
 
 import android.app.Activity;
 import android.content.Intent;

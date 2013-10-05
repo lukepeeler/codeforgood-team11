@@ -1,7 +1,6 @@
 package com.goodwill.getwell;
 
 import android.os.Bundle;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.view.KeyEvent;
@@ -12,12 +11,14 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class HealthScreen extends Activity{
 	
 	private String[] challenges;
+	TextView currWeight, goalWeight;
 	String challenge1;
 	String challenge2;
 	String challenge3;
@@ -26,6 +27,10 @@ public class HealthScreen extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.health_screen);
+		currWeight = (TextView) findViewById(R.id.currWeight);
+		currWeight.setText("Current Weight: " + LoginScreen.user.getWeight());
+		goalWeight = (TextView) findViewById(R.id.goalWeight);
+		goalWeight.setText("Goal Weight: " + LoginScreen.user.getGoalWeight());
 		challenge1 = "test1";
 		challenge2 = "test2";
 		challenge3 = "test3";

@@ -1,7 +1,6 @@
 package com.goodwill.getwell;
 
 import com.goodwill.getwell.databasemgr.DataBaseHelper;
-import com.goodwill.getwell.databasemgr.DatabaseManager;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -9,6 +8,7 @@ import android.content.Intent;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import android.content.Context;
 
 public class WelcomeScreen extends Activity {
@@ -17,6 +17,7 @@ public class WelcomeScreen extends Activity {
 	User user;
 	Challenge c;
 	DataBaseHelper helper;
+	TextView greetingText, scoreText;
 	private Context context;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,11 @@ public class WelcomeScreen extends Activity {
 		setContentView(R.layout.welcome_screen);
 		helper = new DataBaseHelper(context);
 		c = helper.fetchDailyChallenge();
+		greetingText = (TextView) findViewById(R.id.greetingText);
+		scoreText = (TextView) findViewById(R.id.scoreText);
 		user = LoginScreen.user;
+		greetingText.setText("Hello " + user.getUsername());
+		scoreText.setText("Score: " + user.getScore());
 	}
 	
 	public void currGlobalBtnOnClick(View view){

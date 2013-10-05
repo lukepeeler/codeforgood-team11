@@ -79,4 +79,24 @@
         android:background="@drawable/healthicon"
         android:onClick="healthBtnOnClick" />
 
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/careerBtn"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:textSize="40sp"
+        android:layout_toLeftOf="@+id/moneyBtn"
+        android:text="Hello " />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/greetingText"
+        android:layout_below="@+id/greetingText"
+        android:text="Score:  "
+        android:textSize="30sp" />
+
 </RelativeLayout>

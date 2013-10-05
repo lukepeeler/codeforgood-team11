@@ -3,7 +3,6 @@ package com.goodwill.getwell;
 import java.util.ArrayList;
 
 import com.goodwill.getwell.databasemgr.DataBaseHelper;
-import com.goodwill.getwell.databasemgr.DatabaseManager;
 import android.content.Context;
 
 public class User {
