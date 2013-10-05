@@ -268,7 +268,6 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	
 	public ArrayList<Challenge> getUserChallenges(String username)
 	{
-		SQLiteStatement st = null;
 		Date created = null, due = null;
 		ArrayList<Challenge> challenges = new ArrayList<Challenge>();
 		try {
@@ -288,6 +287,32 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 					challenge.markComplete();
 				}
 				
+				challenges.add(challenge);
+			}
+		} catch (SQLiteException e) {
+			e.printStackTrace();
+		} 
+
+		return challenges;
+	}
+	
+	public ArrayList<Challenge> getChallengesByType(String type)
+	{
+		Date created = null, due = null;
+		ArrayList<Challenge> challenges = new ArrayList<Challenge>();
+		try {
+			openDataBase();
+			Cursor cursor = myDataBase.rawQuery("SELECT * FROM challenge WHERE category = '" + type + "'", null);
+			while (cursor.moveToNext()) {
+				try {
+					created = new SimpleDateFormat("yyyy-MM-dd").parse(cursor.getString(4));
+					due = new SimpleDateFormat("yyyy-MM-dd").parse(cursor.getString(5));
+				} catch (java.text.ParseException e) {
+					e.printStackTrace();
+				}
+				Challenge challenge = new Challenge(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
+													cursor.getInt(3), created, due, cursor.getInt(6), cursor.getString(7));
+
 				challenges.add(challenge);
 			}
 		} catch (SQLiteException e) {
