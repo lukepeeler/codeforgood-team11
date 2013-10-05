@@ -36,7 +36,8 @@ public final class R {
         public static final int streakBtn=0x7f080007;
     }
     public static final class layout {
-        public static final int welcome_screen=0x7f030000;
+        public static final int health_screen=0x7f030000;
+        public static final int welcome_screen=0x7f030001;
     }
     public static final class menu {
         public static final int welcome_screen=0x7f070000;
