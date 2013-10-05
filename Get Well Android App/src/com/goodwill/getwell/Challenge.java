@@ -10,10 +10,11 @@ public class Challenge {
 	private Date dateCreated;
 	private Date dateDue;
 	private boolean isComplete;
+	private int items;
 	private String type;
 	
 	public Challenge(int challengeID, String challengeName, String challengeDesc,
-					 int challengePoints, Date dateCreated, Date dateDue, String type)
+					 int challengePoints, Date dateCreated, Date dateDue, int items, String type)
 	{
 		this.challengeID = challengeID;
 		this.challengeName = challengeName;
@@ -22,6 +23,7 @@ public class Challenge {
 		this.dateCreated = dateCreated;
 		this.dateDue = dateDue;
 		this.isComplete = false;
+		this.items = items;
 		this.type = type;
 		
 	}
