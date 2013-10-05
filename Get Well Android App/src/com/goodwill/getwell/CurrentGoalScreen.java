@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
  
 public class CurrentGoalScreen extends Activity {
  
-	Button todaysChallengeButton, findFriendsButton;
+	ImageButton todaysChallengeButton;
+	Button findFriendsButton;
 	
 	//Boolean to decide if Challenge was Accepted
 	boolean challengeAccepted = false;
@@ -24,7 +26,7 @@ public class CurrentGoalScreen extends Activity {
 	}
 	
 	private void setUpVars(){
-		todaysChallengeButton = (Button) findViewById(R.id.todaysChallengeButton);
+		todaysChallengeButton = (ImageButton) findViewById(R.id.todaysChallengeButton);
 		findFriendsButton = (Button) findViewById(R.id.findFriendsButton);
 		
 		//If $ Button pressed, go to description
