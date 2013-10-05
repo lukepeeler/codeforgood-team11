@@ -48,6 +48,7 @@ public class HealthScreen extends Activity{
 	        }});
 		}
 	
+<<<<<<< HEAD
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 	    if (keyCode == KeyEvent.KEYCODE_BACK ) {
@@ -56,12 +57,12 @@ public class HealthScreen extends Activity{
 			HealthScreen.this.startActivity(intent);
 	    }
 	    return super.onKeyDown(keyCode, event);
-	}
-	
+=======
 	public void welcomeOnClick(View view){
 		Intent intent = new Intent(HealthScreen.this, WelcomeScreen.class);
 		HealthScreen.this.startActivity(intent);
 				
+>>>>>>> 9e5ea54d90cdca1e08a5694b181873e1afc1479a
 	}
 	
 	
