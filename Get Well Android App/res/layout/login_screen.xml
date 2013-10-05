@@ -20,11 +20,7 @@
         android1:textSize="30sp"
         android1:text="Password"
         android1:onClick="passwordTextOnClick"
-        android1:ems="10"
-        android1:transformationMethod="transformPassword"
-
-        <requestFocus />
-    </EditText>
+        android1:ems="10"/>
 
     <Button
         android1:id="@+id/loginBtn"
