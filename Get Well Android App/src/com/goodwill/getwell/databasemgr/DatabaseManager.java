@@ -41,7 +41,7 @@ public class DatabaseManager {
 		} finally {
 			st.dispose();
 		}
-		db.dispose();
+//		db.dispose();
 	}
 
 	public static User fetchUserByUsername(String username) {
@@ -84,15 +84,15 @@ public class DatabaseManager {
 			st = db.prepare("SELECT * FROM challenge NATURAL JOIN participation WHERE username = '" + username +"';");
 			while (st.step()) {
 				try {
-					created = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(st.columnString(4));
-					due = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(st.columnString(5));
+					created = new SimpleDateFormat("yyyy-MM-dd").parse(st.columnString(4));
+					due = new SimpleDateFormat("yyyy-MM-dd").parse(st.columnString(5));
 				} catch (java.text.ParseException e) {
 					e.printStackTrace();
 				}
 				Challenge challenge = new Challenge(st.columnInt(0), st.columnString(1), st.columnString(2),
-													st.columnInt(3), created, due, st.columnString(6));
+													st.columnInt(3), created, due, st.columnInt(6), st.columnString(7));
 				// see if challenge was completed (columnValue?)
-				if (st.columnInt(8) == 1){
+				if (st.columnInt(9) == 1){
 					challenge.markComplete();
 				}
 				
@@ -104,7 +104,7 @@ public class DatabaseManager {
 			st.dispose();
 		}
 		
-		db.dispose();
+//		db.dispose();
 		return challenges;
 	}
 	
@@ -164,6 +164,37 @@ public class DatabaseManager {
 			st.dispose();
 		}
 	}
+	
+	public static Challenge fetchDailyChallenge()
+	{
+		Date today = new Date();
+		Challenge c = null;
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		System.out.println(dateFormat.format(today));
+		Date created = null, due = null;
+		SQLiteStatement st = null;
+		try{
+			db.open();
+			st = db.prepare("SELECT * FROM challenge WHERE date_created = '" + dateFormat.format(today) + "';");
+			while(st.step()){
+				try {
+					created = new SimpleDateFormat("yyyy-MM-dd").parse(st.columnString(4));
+					due = new SimpleDateFormat("yyyy-MM-dd").parse(st.columnString(5));
+				} catch (java.text.ParseException e) {
+					e.printStackTrace();
+				}
+					c = new Challenge(st.columnInt(0), st.columnString(1), st.columnString(2),
+									  st.columnInt(3), created, due, st.columnInt(6), st.columnString(7));
+			}
+		} catch (SQLiteException e){
+			e.printStackTrace();
+		} finally {
+			st.dispose();
+		}
+		
+		return c;
+	}
+	
 		
 
 

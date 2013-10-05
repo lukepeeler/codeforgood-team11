@@ -49,5 +49,6 @@ public class DatabaseManagerTest2 extends TestCase {
 			System.out.println(friend.getUsername());
 		}
 		
+		DatabaseManager.fetchDailyChallenge();
  	}
 }
