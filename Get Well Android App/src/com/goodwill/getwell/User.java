@@ -175,6 +175,25 @@ public class User {
 		DatabaseManager.addChallengeToUser(username, DatabaseManager.fetchDailyChallenge());
 	}
 	
+	public int getScore()
+	{
+		ArrayList<Challenge> challenges = DatabaseManager.getUserChallenges(username);
+		int score = 0;
+		for (Challenge c : challenges){
+			if (c.isComplete()){
+				score += c.getChallengePoints();
+			}
+		}
+		
+		this.totalScore = score;
+		return score;
+	}
+	
+	public void submitChallenge()
+	{
+		
+	}
+	
 
 	
 	
