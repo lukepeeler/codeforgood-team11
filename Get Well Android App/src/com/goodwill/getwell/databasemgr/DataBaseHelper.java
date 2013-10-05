@@ -127,6 +127,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     	System.out.println("foobar");
     	//Open the database
         String myPath = DB_PATH + DB_NAME;
+        
     	myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
     	System.out.println("foobar1");
     	
@@ -161,6 +162,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		User user = null;
 		try {
 			System.out.println("here0");
+			System.out.println(checkDataBase());
+			
 			openDataBase();
 			System.out.println("here1");
 			Cursor cursor = myDataBase.rawQuery("SELECT * FROM users WHERE _id = '" + username + "'", null);
