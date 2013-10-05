@@ -13,3 +13,4 @@ android-sdk-macosx/
 *.out
 .metadata/
 bin/
+Get Well Android App/gen/com/goodwill/getwell/R.java

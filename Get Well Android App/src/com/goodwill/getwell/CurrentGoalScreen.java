@@ -1,14 +1,12 @@
 package com.goodwill.getwell;
-import java.text.DateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 
 import com.goodwill.getwell.databasemgr.DatabaseManager;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +21,8 @@ public class CurrentGoalScreen extends Activity {
 	TextView time;
 	TextView challengeDesc;
 	Challenge c;
+	
+	
 	
 	//Boolean to decide if Challenge was Accepted
 	boolean challengeAccepted = false;
@@ -57,9 +57,13 @@ public class CurrentGoalScreen extends Activity {
 			}
 		});
 		
-		
+		//Set the left time
 		int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 		int timeLeft = 24-hour;
+		String timeleft = Integer.toString(timeLeft);
+		time = (TextView)findViewById(R.id.time);
+		time.setText(timeleft);
+		
 		
 		
 		
@@ -67,7 +71,16 @@ public class CurrentGoalScreen extends Activity {
 		
 	}
  
-	
+	//Override Back Button
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if (keyCode == KeyEvent.KEYCODE_BACK ) {
+	        //do your stuff
+	    	Intent intent = new Intent(CurrentGoalScreen.this, WelcomeScreen.class);
+			CurrentGoalScreen.this.startActivity(intent);
+	    }
+	    return super.onKeyDown(keyCode, event);
+	}
 	
 	
  

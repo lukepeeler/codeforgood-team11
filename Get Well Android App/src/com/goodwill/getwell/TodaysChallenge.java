@@ -4,6 +4,7 @@ import com.goodwill.getwell.databasemgr.DatabaseManager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -51,6 +52,19 @@ public class TodaysChallenge extends Activity {
 				
 			}
 		});
+		
+		
+	}
+	
+	//Override Back Button
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if (keyCode == KeyEvent.KEYCODE_BACK ) {
+	        //do your stuff
+	    	Intent intent = new Intent(TodaysChallenge.this, CurrentGoalScreen.class);
+			TodaysChallenge.this.startActivity(intent);
+	    }
+	    return super.onKeyDown(keyCode, event);
 	}
 	
 	

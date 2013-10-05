@@ -34,6 +34,18 @@
             android:name="com.goodwill.getwell.HealthScreen"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.goodwill.getwell.CareerScreen"
+            android:label="Career" >
+        </activity>
+        <activity
+            android:name="com.goodwill.getwell.FinanceScreen"
+            android:label="Finance" >
+        </activity>
+        <activity
+            android:name="com.goodwill.getwell.SocialScreen"
+            android:label="Social" >
+        </activity>
     </application>
 
 </manifest>

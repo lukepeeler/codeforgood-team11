@@ -11,13 +11,14 @@ import android.view.View;
 public class WelcomeScreen extends Activity {
 	
 	int currStreak, currBadges, currNotifications;
+	User user;
 	Challenge c;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_screen);
 		c = DatabaseManager.fetchDailyChallenge();
-		
+		user = DatabaseManager.fetchUserByUsername("foo");
 	}
 	
 	public void currGlobalBtnOnClick(View view){
