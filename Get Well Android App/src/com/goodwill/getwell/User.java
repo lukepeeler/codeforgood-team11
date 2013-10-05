@@ -2,7 +2,9 @@ package com.goodwill.getwell;
 
 import java.util.ArrayList;
 
+import com.goodwill.getwell.databasemgr.DataBaseHelper;
 import com.goodwill.getwell.databasemgr.DatabaseManager;
+import android.content.Context;
 
 public class User {
 	private String username;
@@ -20,6 +22,8 @@ public class User {
 	private ArrayList<Challenge> challengesAccepted = new ArrayList<Challenge>();
 	private int totalScore;
 	private int currentStreak;
+	private static Context context;
+	private static DataBaseHelper helper = new DataBaseHelper(context);
 	
 	// "signup" constructor
 	public User(String username, String password, String email, String fname, String lname,
@@ -42,9 +46,9 @@ public class User {
 	
 	
 	// "login" and return 0 if OK, -1 if user not found, -2 if incorrect password
-	public int login(String username, String password)
+	public static int login(String username, String password)
 	{
-		User user = DatabaseManager.fetchUserByUsername(username);
+		User user = helper.fetchUserByUsername(username);
 		if (user == null){
 			return -1;
 		}
@@ -56,11 +60,10 @@ public class User {
 	}
 	
 	// to be called after login info is verified using method above
-	public User fetchUserAfterLogin(String username)
+	public static User fetchUserAfterLogin(String username)
 	{
-		User user = DatabaseManager.fetchUserByUsername(username);
+		User user = helper.fetchUserByUsername(username);
 		return user;
-		
 	}
 
 	public String getUsername() {
@@ -155,29 +158,29 @@ public class User {
 	
 	public ArrayList<User> getUserFriends()
 	{
-		this.friends = DatabaseManager.getUserFriends(username);
+		this.friends = helper.getUserFriends(username);
 		return friends;
 	}
 	
 	public ArrayList<Challenge> getUserChallenges()
 	{
-		this.challengesAccepted = DatabaseManager.getUserChallenges(username);
+		this.challengesAccepted = helper.getUserChallenges(username);
 		return challengesAccepted;
 	}
 	
 	public void addChallenge(Challenge c)
 	{
-		DatabaseManager.addChallengeToUser(username, c);
+		helper.addChallengeToUser(username, c);
 	}
 	
 	public void addDailyChallenge()
 	{
-		DatabaseManager.addChallengeToUser(username, DatabaseManager.fetchDailyChallenge());
+		helper.addChallengeToUser(username, helper.fetchDailyChallenge());
 	}
 	
 	public int getScore()
 	{
-		ArrayList<Challenge> challenges = DatabaseManager.getUserChallenges(username);
+		ArrayList<Challenge> challenges = helper.getUserChallenges(username);
 		int score = 0;
 		for (Challenge c : challenges){
 			if (c.isComplete()){

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.almworks.sqlite4java.SQLiteStatement;
@@ -215,6 +216,85 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 		}
 		
 		return c;
+	}
+	
+	public void addChallengeToUser(String username, Challenge c)
+	{
+		try{
+			openDataBase();
+			Cursor cursor = myDataBase.rawQuery("INSERT INTO participation VALUES (" + c.getChallengeID() + ", '" + username + "', " + 0 + ")", null);
+			while (cursor.moveToNext()){
+				;
+			}
+		} catch (SQLiteException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public void addFriendToUser(User user, String friendName)
+	{
+		try{
+			openDataBase();
+			Cursor cursor = myDataBase.rawQuery("INSERT INTO friendship VALUES ('" + user.getUsername() + "', '" + friendName + "')", null);
+			while(cursor.moveToNext()){
+				;
+			}
+		} catch (SQLiteException e){
+			e.printStackTrace();
+		}
+	}
+	
+	public ArrayList<User> getUserFriends(String username)
+	{
+
+		ArrayList<User> friends = new ArrayList<User>();
+		ArrayList<String> friendNames = new ArrayList<String>();
+		try {
+			openDataBase();
+			Cursor cursor = myDataBase.rawQuery("SELECT friend_name_id FROM friendship WHERE username_id = '" + username + "'", null);
+			while (cursor.moveToNext()){
+				friendNames.add(cursor.getString(0));
+			}
+		} catch (SQLiteException e) {
+			e.printStackTrace();
+		}
+		
+		
+		for (String name : friendNames){
+			friends.add(fetchUserByUsername(name));
+		}
+		return friends;
+	}
+	
+	public ArrayList<Challenge> getUserChallenges(String username)
+	{
+		SQLiteStatement st = null;
+		Date created = null, due = null;
+		ArrayList<Challenge> challenges = new ArrayList<Challenge>();
+		try {
+			openDataBase();
+			Cursor cursor = myDataBase.rawQuery("SELECT * FROM challenge, participation WHERE username = '" + username +"' AND challenge._id = participation.challenge_id", null);
+			while (cursor.moveToNext()) {
+				try {
+					created = new SimpleDateFormat("yyyy-MM-dd").parse(cursor.getString(4));
+					due = new SimpleDateFormat("yyyy-MM-dd").parse(cursor.getString(5));
+				} catch (java.text.ParseException e) {
+					e.printStackTrace();
+				}
+				Challenge challenge = new Challenge(cursor.getInt(0), cursor.getString(1), cursor.getString(2),
+													cursor.getInt(3), created, due, cursor.getInt(6), cursor.getString(7));
+				// see if challenge was completed (columnValue?)
+				if (cursor.getInt(9) == 1){
+					challenge.markComplete();
+				}
+				
+				challenges.add(challenge);
+			}
+		} catch (SQLiteException e) {
+			e.printStackTrace();
+		} 
+
+		return challenges;
 	}
  
 }
