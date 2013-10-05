@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.content.Context;
 
 public class LoginScreen extends Activity {
@@ -25,7 +26,6 @@ public class LoginScreen extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_screen);
 		helper = new DataBaseHelper(context);
-		user = helper.fetchUserByUsername("foo");
 		usernameText = (EditText) findViewById(R.id.usernameText);
 		passwordText = (EditText) findViewById(R.id.passwordText);
 	}
@@ -37,8 +37,18 @@ public class LoginScreen extends Activity {
 		
 	}
 	public void loginBtnOnClick(View view){
-		Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
-		LoginScreen.this.startActivity(intent);
+		switch(User.login(usernameText.getText().toString(), passwordText.getText().toString()) )
+		{	
+			case 0:
+				user = helper.fetchUserByUsername(usernameText.getText().toString());
+				Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
+				LoginScreen.this.startActivity(intent);
+				break;
+//			case -1: Toast.makeText(getApplicationContext(), "User not found", Toast.LENGTH_SHORT).show();
+//				break;
+//			case -2: Toast.makeText(getApplicationContext(), "Password incorrect", Toast.LENGTH_SHORT).show();
+//				break;
+		}
 	}
 	
 }
