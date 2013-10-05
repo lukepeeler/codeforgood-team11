@@ -24,7 +24,8 @@
         android:layout_height="75dp"
         android:layout_alignBaseline="@+id/healthBtn"
         android:layout_alignBottom="@+id/healthBtn"
-        android:layout_alignLeft="@+id/careerBtn" />
+        android:layout_alignLeft="@+id/careerBtn"
+        android:onClick="socialBtnOnClick" />
 
     <Button
         android:id="@+id/careerBtn"
@@ -33,14 +34,16 @@
         android:layout_above="@+id/socialBtn"
         android:layout_marginBottom="40dp"
         android:layout_marginLeft="15dp"
-        android:layout_toRightOf="@+id/currGlobalBtn" />
+        android:layout_toRightOf="@+id/currGlobalBtn" 
+        android:onClick="careerBtnOnClick"/>
 
     <Button
         android:id="@+id/currGlobalBtn"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_above="@+id/careerBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true" 
+        android:onClick="currGlobalBtnOnClick"/>
 
     <Button
         android:id="@+id/moneyBtn"
@@ -49,21 +52,24 @@
         android:layout_alignBaseline="@+id/careerBtn"
         android:layout_alignBottom="@+id/careerBtn"
         android:layout_marginRight="15dp"
-        android:layout_toLeftOf="@+id/currGlobalBtn" />
+        android:layout_toLeftOf="@+id/currGlobalBtn" 
+        android:onClick="moneyBtnOnClick"/>
 
     <Button
         android:id="@+id/notificationsBtn"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/streakBtn"
-        android:layout_alignRight="@+id/careerBtn" />
+        android:layout_alignRight="@+id/careerBtn" 
+        android:onClick="notificationsBtnOnClick"/>
 
     <Button
         android:id="@+id/badgesBtn"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignBottom="@+id/notificationsBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true" 
+        android:onClick="badgesBtnOnClick"/>
 
     <Button
         android:id="@+id/streakBtn"
@@ -71,7 +77,8 @@
         android:layout_height="50dp"
         android:layout_above="@+id/currGlobalBtn"
         android:layout_alignLeft="@+id/moneyBtn"
-        android:layout_marginBottom="24dp" />
+        android:layout_marginBottom="24dp" 
+        android:onClick="streakBtnOnClick"/>
 
     <Button
         android:id="@+id/healthBtn"
@@ -79,7 +86,8 @@
         android:layout_height="75dp"
         android:layout_alignLeft="@+id/moneyBtn"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp" />
+        android:layout_marginBottom="15dp" 
+        android:onClick="healthBtnOnClick"/>
 
     
 
