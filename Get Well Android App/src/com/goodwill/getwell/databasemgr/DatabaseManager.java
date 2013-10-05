@@ -17,7 +17,7 @@ import com.almworks.sqlite4java.SQLiteStatement;
 import com.goodwill.getwell.*;
 
 public class DatabaseManager {
-	private static SQLiteConnection db = new SQLiteConnection(new File("/Users/lukepeeler/dev/appdb.db"));
+	private static SQLiteConnection db = new SQLiteConnection(new File("/data/data/com.goodwill.getwell/databases/appdb.db"));
 
 	public DatabaseManager() {
 		// TODO: edit path of this database when demoing!!
