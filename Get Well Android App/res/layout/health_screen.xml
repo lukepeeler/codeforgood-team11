@@ -38,7 +38,7 @@
         android1:textSize="30sp" />
 
     <Spinner
-        android1:id="@+id/spinner1"
+        android1:id="@+id/healthSpinner"
         android1:layout_width="fill_parent"
         android1:layout_height="wrap_content"
         android1:layout_alignLeft="@+id/currBMI"
