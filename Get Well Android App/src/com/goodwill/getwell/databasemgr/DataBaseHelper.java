@@ -157,8 +157,11 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 	public User fetchUserByUsername(String username) {
 		User user = null;
 		try {
+			System.out.println("here0");
 			openDataBase();
+			System.out.println("here1");
 			Cursor cursor = myDataBase.rawQuery("SELECT * FROM users WHERE _id = '" + username + "'", null);
+			System.out.println("here2");
 			if (cursor != null){
 				while (cursor.moveToNext()){
 					System.out.println(cursor.getString(0));
