@@ -31,7 +31,7 @@
         android:layout_height="200dp"
         android:layout_below="@+id/socialSpinner"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="54dp" 
+        android:layout_marginTop="54dp" >
     </ListView>
 
     <TextView
