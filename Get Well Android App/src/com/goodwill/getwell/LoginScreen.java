@@ -1,5 +1,7 @@
 package com.goodwill.getwell;
 
+import org.apache.http.auth.UsernamePasswordCredentials;
+
 import com.goodwill.getwell.databasemgr.DataBaseHelper;
 import com.goodwill.getwell.databasemgr.DatabaseManager;
 
@@ -22,17 +24,21 @@ public class LoginScreen extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login_screen);
-		System.out.println("TEST1");
 		helper = new DataBaseHelper(context);
-		System.out.println("TEST2");
 		user = helper.fetchUserByUsername("foo");
-		System.out.println("TEST 3");
+		usernameText = (EditText) findViewById(R.id.usernameText);
+		passwordText = (EditText) findViewById(R.id.passwordText);
 	}
-	private void usernameTextOnClick(View view){
+	public void usernameTextOnClick(View view){
+		usernameText.setText("");
+	}
+	public void passwordTextOnClick(View view){
+		passwordText.setText("");
 		
 	}
-	private void passwordTextOnClick(View view){
-		
+	public void loginBtnOnClick(View view){
+		Intent intent = new Intent(LoginScreen.this, WelcomeScreen.class);
+		LoginScreen.this.startActivity(intent);
 	}
 	
 }
