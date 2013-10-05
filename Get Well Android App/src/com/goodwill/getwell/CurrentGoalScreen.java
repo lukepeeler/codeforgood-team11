@@ -38,7 +38,7 @@ public class CurrentGoalScreen extends Activity {
 		c = DatabaseManager.fetchDailyChallenge();
 		todaysChallengeButton = (ImageButton) findViewById(R.id.todaysChallengeButton);
 		findFriendsButton = (Button) findViewById(R.id.findFriendsButton);
-		challengeDesc = new (TextView) findFriendsButton(R.id.textView1);
+		challengeDesc = (TextView) findViewById(R.id.textView1);
 		challengeDesc.setText(c.getChallengeName());
 		//If $ Button pressed, go to description
 		todaysChallengeButton.setOnClickListener(new View.OnClickListener(){
