@@ -68,8 +68,4 @@ public class TodaysChallenge extends Activity {
 	}
 	
 	
-	
-	
-	
-	
 }

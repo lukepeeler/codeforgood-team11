@@ -52,6 +52,7 @@
         android1:layout_height="50dp"
         android1:layout_alignParentBottom="true"
         android1:layout_alignParentRight="true"
-        android1:background="@drawable/homeicon" />
+        android1:background="@drawable/homeicon" 
+        android1:onClick="welcomeOnClick"/>
 
 </RelativeLayout>
