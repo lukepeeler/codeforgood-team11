@@ -1,5 +1,7 @@
 package com.goodwill.getwell;
 
+import com.goodwill.getwell.databasemgr.DatabaseManager;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -9,10 +11,13 @@ import android.view.View;
 public class WelcomeScreen extends Activity {
 	
 	int currStreak, currBadges, currNotifications;
+	Challenge c;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.welcome_screen);
+		c = DatabaseManager.fetchDailyChallenge();
+		
 	}
 	
 	public void currGlobalBtnOnClick(View view){

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+import com.goodwill.getwell.databasemgr.DatabaseManager;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -19,6 +21,8 @@ public class CurrentGoalScreen extends Activity {
 	ImageButton todaysChallengeButton; 
 	Button findFriendsButton;
 	TextView time;
+	TextView challengeDesc;
+	Challenge c;
 	
 	//Boolean to decide if Challenge was Accepted
 	boolean challengeAccepted = false;
@@ -31,9 +35,11 @@ public class CurrentGoalScreen extends Activity {
 	}
 	
 	private void setUpVars(){
+		c = DatabaseManager.fetchDailyChallenge();
 		todaysChallengeButton = (ImageButton) findViewById(R.id.todaysChallengeButton);
 		findFriendsButton = (Button) findViewById(R.id.findFriendsButton);
-		
+		challengeDesc = new (TextView) findFriendsButton(R.id.textView1);
+		challengeDesc.setText(c.getChallengeName());
 		//If $ Button pressed, go to description
 		todaysChallengeButton.setOnClickListener(new View.OnClickListener(){
 			public void onClick(View v){

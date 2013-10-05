@@ -52,7 +52,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="118dp"
         android:fontFamily="Calibri"
-        android:text="TODAY&apos;S CHALLENGE"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#1E90FF"
         android:textStyle="bold" />
